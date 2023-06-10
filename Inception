@@ -1,0 +1,163 @@
+Episode-1 Inception
+
+React is just grp of JS libraries or Manipulate the DOM by JS libraries
+Dom is just like the structure to CRUD operation of node in it.
+
+Emmet - is the markup language which expanding CSS rules into html.
+ cheatsheet - https://docs.emmet.io/cheat-sheet/
+
+Html:5 gives u simple HTML format
+Document.createElement  - is to create the html and by inner html we can insert our html text
+document.getElementbyId- helps to get the id of the tag in the HTML page.
+const root= document.getElementById("root");
+root.appendChild(heading);
+All these functions are embedded in the browser but in React its not.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<div id="root">
+<script>
+const heading =document.createElement("h1");
+heading.innerHTML='Hey World from JS';
+const root= document.getElementById("root");
+root.appendChild(heading);
+
+
+</script>
+</div>
+</body>
+</html>
+
+CDN-  is a system with many distributed servers which helps in to access the web contents to users based on their geographic location. Content delivery Network where our React has been hosted and we are pulling the reacts into our projects.
+Research on CDN? 
+Why React hosted on CDN- by reducing the delay and improve the performance of the website it also provide Distributed Dos by using filter out the traffic and reject them and also provide the load balancing to balance out the heavy traffic into different servers.
+Cross-origin - refers to the interaction between origin and different websites or domains. CDN/ReactJs wanted to make sure the request which is made is authorized or properly validate..
+React.development.js – core of the react file component
+React–dom.development.js - bridge between react vs browser
+
+
+30 min over
+
+Next 30 min-
+
+So React has it own function & method
+To create the element use React.createElement(1,2,3)
+1- tag name=”h1”
+2- object={} - u can attribute to your tags like style,width,height
+3 - what u want to pass in inner element= “Hello welcome to React”- is just like the children. If u have the multiple sibling then conver into array.[]
+Then we have to create root inside the root where all our code will run and render into DOM
+Const root= ReactDOM.createRoot(document.getElementById(“root”));
+root.render(heading)- what u want to render pass into render brackets. It takes object like heading then convert into HTML tag and render into DOM.
+Three main components
+CreateElement
+CreateRoot
+Render
+ But we use JSX instead of createElement. JSX makes very easy for us to write the very long code.
+ Whenever you write some html tag inside the div tag in html file and same u have written some functionality in some js file to pass into that root div element in html.So browser first render the first condition then follow the other condition.
+Orders of the file alot in the react file and where is the root where we render our data.
+
+
+
+
+
+
+
+Index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./index.css">
+<title>Document</title>
+</head>
+<body>
+<div id="root">
+<h1>Hello</h1>
+</div>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
+
+
+App.js
+
+/**
+* <div id="parent">
+* <div id="child"?
+* <h1> I am h1 tag</h1>
+* </div>
+* <div id="child"?
+* <h1> I am h1 tag</h1>
+* </div>
+* </div>
+*
+* ReactElement(Object) ==> HTML(Browser Understands)
+*
+*/
+
+
+const parent= React.createElement("div",{id:"parent"},
+[React.createElement("div",{id:"child1"},
+[React.createElement("h1",{},"I am an H1 tag"),React.createElement("h2",{},"I am an H1 tag")]),React.createElement("div",{id:"child2"},
+[React.createElement("h1",{},"I am an H1 tag"),React.createElement("h2",{},"I am an H1 tag")])]);
+
+
+
+
+
+
+
+
+
+
+// const heading = React.createElement(
+// "h1",{id:"heading"},
+// "Hello World By ReactJs"el
+// );
+// console.log(heading); //object
+
+
+console.log(parent);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(parent);// convert object into heading tag and put into the DOM and also put parent inside the root tag in html file
+
+
+
+Index.css
+
+#heading {
+color: red;
+}
+
+
+
+Assignment Questions - Episode 1 - Inception
+
+Difference between framework and Libraries-
+Framework is to deploy your application quickly and helps u in the greater UI.
+Where Libraries helps to enhance the functionality of your applications.
+Framework helps us to design the application whereas Libraries just consist of an function that an application calls to perform a task.
+Why react is called as react- because its react and it responds dynamically to changes in the data . It is developed by Facebook 
+what is the difference between react.development.js and react.production.js files via cdn
+Development means u are running the application in your local machine
+Production means you are running in the environment where so many user are coming to consumed the application.
+HTML parsing- is to process of taking the html raw file and generating a DOM tree object structure from it.
+Async and Defer attributes are the boolean attributes which are used along with the script tag to load external scrips efficiently in the web page. Three scenarios can be make here.
+Simple script tag - When html parser the code and suddenly if it’s hit the script tag so it stops then fetch/execute the script first from the other file and then it will run again.
+But when we use async attribute inside the script tag- so it will not take much time to fetch/execute the scipt because it fetch the script along with the html parsing and once the script execute then  only html parse will continue. Only execute the scripts block the html parsing.- single script when there is no scripts dependencies.
+Defer - here fetch will run along with the html parse but executing the script will run at the end of the html parsing. Maintains the order of execution so good to be use in the multiple scripts
+	
+
+ 	 
+
+
+
+
